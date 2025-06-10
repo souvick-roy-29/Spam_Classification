@@ -17,8 +17,8 @@ def transform_text(text):
     y = [ps.stem(i) for i in text if i.isalnum() and i not in stop_words and i not in string.punctuation]
     return " ".join(y)
 
-tfidf = pickle.load(open(r'C:\Users\souvi\OneDrive\Desktop\Spam_Classification_Project\vectorizer.pkl', 'rb'))
-model = pickle.load(open(r'C:\Users\souvi\OneDrive\Desktop\Spam_Classification_Project\model.pkl', 'rb'))
+tfidf = pickle.load(open(r'vectorizer.pkl', 'rb'))
+model = pickle.load(open(r'model.pkl', 'rb'))
 
 st.title("📩 Email/SMS Spam Classifier")
 
