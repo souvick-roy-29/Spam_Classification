@@ -10,6 +10,7 @@ try:
 except LookupError:
     nltk.download('punkt')
     nltk.download('punkt_tab')
+    nltk.download('averaged_perceptron_tagger')
 
 try:
     nltk.data.find('corpora/stopwords')
