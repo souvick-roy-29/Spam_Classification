@@ -5,18 +5,18 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
+nltk_path = '/tmp/nltk_data'
+nltk.data.path.append(nltk_path)
+
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    nltk.download('punkt')
-    nltk.download('punkt_tab')
-    nltk.download('averaged_perceptron_tagger')
+    nltk.download('punkt', download_dir=nltk_path)
 
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
-    nltk.download('stopwords')
-
+    nltk.download('stopwords', download_dir=nltk_path)
 ps = PorterStemmer()
 stop_words = set(stopwords.words('english'))
 
